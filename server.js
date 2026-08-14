@@ -19,7 +19,7 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const JWT_SECRET =
     process.env.JWT_SECRET ||
@@ -1923,6 +1923,7 @@ io.on(
 
 server.listen(
     PORT,
+    '0.0.0.0',
     () => {
 
         console.log("");
