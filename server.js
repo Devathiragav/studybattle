@@ -1920,34 +1920,37 @@ io.on(
 // ========================================
 // START SERVER
 // ========================================
+if (!process.env.VERCEL) {
+    server.listen(
+        PORT,
+        '0.0.0.0',
+        () => {
 
-server.listen(
-    PORT,
-    '0.0.0.0',
-    () => {
+            console.log("");
+            console.log(
+                "================================"
+            );
 
-        console.log("");
-        console.log(
-            "================================"
-        );
+            console.log(
+                "      STUDYBATTLE SERVER"
+            );
 
-        console.log(
-            "      STUDYBATTLE SERVER"
-        );
+            console.log(
+                "================================"
+            );
 
-        console.log(
-            "================================"
-        );
+            console.log(
+                `Running at http://localhost:${PORT}`
+            );
 
-        console.log(
-            `Running at http://localhost:${PORT}`
-        );
+            console.log(
+                "================================"
+            );
 
-        console.log(
-            "================================"
-        );
+            console.log("");
 
-        console.log("");
+        }
+    );
+}
 
-    }
-);
+module.exports = server;
